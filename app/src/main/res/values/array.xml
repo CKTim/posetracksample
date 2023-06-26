@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="track_mode_spinner_item">
+        <item>Single</item>
+        <item>Two</item>
+        <item>All</item>
+    </string-array>
+
+    <string-array name="skeleton_mode_spinner_item">
+        <item>2D</item>
+        <item>3D</item>
+    </string-array>
+
+    <string-array name="rotate_type">
+        <item>Angle 0</item>
+        <item>Angle 90</item>
+        <item>Angle 270</item>
+    </string-array>
+
+    <string-array name="resolution_item">
+        <item>480P</item>
+        <item>720P</item>
+        <item>1080P</item>
+    </string-array>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">OrbbecPoseSample</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="select_track_mode">选择跟踪模式:</string>
+    <string name="starting">骨架跟踪</string>
+    <string name="select_skeleton_mode">选择骨架模式:</string>
+    <string name="filter_param">滤波参数:</string>
+    <string name="rotation">旋转:</string>
+    <string name="resolution">分辨率:</string>
+    <string name="render">图像渲染</string>
+    <string name="track_time">Track time:<xliff:g>%1$.2f</xliff:g>ms</string>
+    <string name="track_rate">Track rate:<xliff:g>%1$.1f</xliff:g>fps</string>
+    <string name="frame_rate">Frame rate:<xliff:g>%1$.1f</xliff:g>fps</string>
+</resources>

@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        applicationId "com.orbbec.posesample"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "3.4.6"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions -fPIC"
+                arguments "-DPROJECT_ROOT=${project.rootDir}"
+            }
+        }
+
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            jniDebuggable true
+        }
+        debug {
+            jniDebuggable true
+        }
+    }
+
+    sourceSets{
+        main{
+            jniLibs.srcDirs =['libs']
+        }
+    }
+
+//    externalNativeBuild {
+//        cmake {
+//            path "src/main/cpp/CMakeLists.txt"
+//        }
+//    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = "${rootProject.name}-${defaultConfig.versionName}_orbbec_sdk.apk"
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+// 用于控制选择哪个平台进行打包编译,可选择A311D或者S905D3
+def platform = "A311D"
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+    if ("A311D" == platform) {
+        implementation files('libs/a311d/obt-android-3.4.6.aar')
+    } else if ("S905D3" == platform) {
+        implementation files('libs/s905d3/obt-android-3.4.5.aar')
+    }
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+}
