@@ -66,15 +66,9 @@ android {
     }
 }
 
-// 用于控制选择哪个平台进行打包编译,可选择A311D或者S905D3
-def platform = "A311D"
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
-    if ("A311D" == platform) {
-        implementation files('libs/a311d/obt-android-3.4.6.aar')
-    } else if ("S905D3" == platform) {
-        implementation files('libs/s905d3/obt-android-3.4.5.aar')
-    }
+    implementation files('libs/a311d/obt-android-3.4.6.aar')
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
