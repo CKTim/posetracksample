@@ -10,13 +10,13 @@ cmake_minimum_required(VERSION 3.4.1)
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
-include_directories(${PROJECT_ROOT}/tutorial_android_orbbec/src/main/cpp/include)
+include_directories(${PROJECT_ROOT}/app/src/main/cpp/include)
 
-set(OPENCV_LIBRARIES ${PROJECT_ROOT}/tutorial_android_orbbec/libs/armeabi-v7a/libopencv_core.so
-        ${PROJECT_ROOT}/tutorial_android_orbbec/libs/armeabi-v7a/libopencv_highgui.so
-        ${PROJECT_ROOT}/tutorial_android_orbbec/libs/armeabi-v7a/libopencv_imgcodecs.so
-        ${PROJECT_ROOT}/tutorial_android_orbbec/libs/armeabi-v7a/libopencv_imgproc.so
-        ${PROJECT_ROOT}/tutorial_android_orbbec/libs/armeabi-v7a/libopencv_videoio.so)
+set(OPENCV_LIBRARIES ${PROJECT_ROOT}/app/libs/armeabi-v7a/libopencv_core.so
+        ${PROJECT_ROOT}/app/libs/armeabi-v7a/libopencv_highgui.so
+        ${PROJECT_ROOT}/app/libs/armeabi-v7a/libopencv_imgcodecs.so
+        ${PROJECT_ROOT}/app/libs/armeabi-v7a/libopencv_imgproc.so
+        ${PROJECT_ROOT}/app/libs/armeabi-v7a/libopencv_videoio.so)
 
 add_library( # Sets the name of the library.
         ImageUtils

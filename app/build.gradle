@@ -42,11 +42,11 @@ android {
         }
     }
 
-//    externalNativeBuild {
-//        cmake {
-//            path "src/main/cpp/CMakeLists.txt"
-//        }
-//    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -64,6 +64,7 @@ android {
             dirs 'libs'
         }
     }
+    ndkVersion '20.1.5948944'
 }
 
 dependencies {
